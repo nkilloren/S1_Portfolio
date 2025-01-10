@@ -1,0 +1,42 @@
+#Noah Killoren
+#01/08/25
+import time
+import random
+print("Welcome to the Multipliczation Quiz")
+score=0
+difficulty=input("What level of difficulty?: Easy, Medium, or Hard")
+q=int(input("How many questions do you want?"))
+def multiplication_game():
+    global score
+    global diffculty
+    global q
+    if difficulty=="Easy":
+        lvl=(1,10)
+    if difficulty=="Medium":
+        lvl=(1,12)
+    if difficulty== "Hard":
+        lvl=(1,15)
+    first_number = random.randint(lvl[0], lvl[1])
+    second_number= random.randint(lvl[0],lvl[1])
+
+    print("What is " + str(first_number) +(" times ")+str(second_number))
+    answer_1=int(input("What is the answer?"))
+
+    if answer_1== (first_number * second_number):
+        print("Correct")
+        score=score+1
+    else:
+        print("Incorrect, the answer was " + str(first_number * second_number))
+
+def quiz():
+    start=time.time()
+    for i in range (q):
+        multiplication_game()
+    end=time.time()
+    print(str(score)+ "/" + str(q))
+    print(str(end-start)+ " is your time")
+
+quiz()
+
+
+

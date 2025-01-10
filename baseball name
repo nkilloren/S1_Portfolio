@@ -1,0 +1,34 @@
+print("Find Your Baseball Player by Answering the question below")
+print("Make sure you spell everything exactly as the prompt states")
+def player():
+    a=input("Would you rather live on a beach or in the mountains")
+    if a== "Beach" or a=="beach":
+            b=input("Do you like Red or Blue")
+            if b== "Red" or b== "red":
+                 c=input("Do you like apples or oranges")
+                 if c== "Apples" or c== "apples":
+                        print("Your player is Mike Trout")
+                 else:
+                        print("Your player is Jose Altuve")
+            else:
+                f=input("Do you like strawberries or blueberries")
+                if f== "Strawberries" or f=="strawberries":
+                    print("Your player is Bryce Harper")
+                else:
+                    print("Your player is Gerrit Cole")
+    else:
+        d= input("Do you like Green or Yellow")
+        if d== "Green" or d== "green":
+                e= input("Do you like Mangos or Blackberries" )
+                if e== "Mangos" or  e=="mangos":
+                    print("Your player is Pete Alonso")
+                else:
+                    print("Your player is Bobby Witt Jr.")
+        else:
+             g= input("Do you like Plums or Bananas")
+             if g== "Plums" or g== "plums":
+                  print("Your player is Shohei Ohtani")
+             else:
+                  print("Your player is Fernando Tatis Jr.")
+
+player()
