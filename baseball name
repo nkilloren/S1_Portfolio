@@ -1,16 +1,22 @@
+#Noah Killoren: Findyour baseball player
+#The point of this project is for the user to input their prefrence between to colors,
+#fruits or place to live. These decisiions lead them to a baseball player.
+
+
+
 print("Find Your Baseball Player by Answering the question below")
 print("Make sure you spell everything exactly as the prompt states")
 def player():
-    a=input("Would you rather live on a beach or in the mountains")
+    a=input("Would you rather live on a beach or in the mountains")  #This narrows your options to 4 players
     if a== "Beach" or a=="beach":
-            b=input("Do you like Red or Blue")
+            b=input("Do you like Red or Blue") #This narrows it down to the two final players, which are corelated with a fruit
             if b== "Red" or b== "red":
                  c=input("Do you like apples or oranges")
-                 if c== "Apples" or c== "apples":
+                 if c== "Apples" or c== "apples": #Between these two fruits, whichever one you pick choses the player for you
                         print("Your player is Mike Trout")
                  else:
                         print("Your player is Jose Altuve")
-            else:
+            else: #Now we have to make peices of that branch again for the other previous options
                 f=input("Do you like strawberries or blueberries")
                 if f== "Strawberries" or f=="strawberries":
                     print("Your player is Bryce Harper")

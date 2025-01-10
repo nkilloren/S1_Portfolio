@@ -1,6 +1,6 @@
 #Simple Calculator
 
-def add(num1, num2):
+def add(num1, num2): #This is all the code for the 4 actions
     sum= num1 + num2
     print("The result is " + str(sum))
 def subtract(num1, num2):
@@ -13,14 +13,14 @@ def divide(num1,num2):
     quotient = num1/num2
     print("The result is " + str(quotient))
 #Main
-print("Welcome to Simple Calculator")
+print("Welcome to Simple Calculator")#This allows the user to pick a action for the calculator
 print("Select an operation:")
 print("""1. Addition
 2. Subtraction
 3. Multiplication
 4. Division
 5. Quit""")
-option = int(input("(1-5) Select option:"))
+option = int(input("(1-5) Select option:"))#This gets input on the numbers from the user, then uses them with the prefered action
 if option == 1:
    int1 = int(input("Enter first number: "))
    int2 = int(input("Enter second number: "))

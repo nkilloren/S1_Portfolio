@@ -2,10 +2,12 @@
 #01/08/25
 import time
 import random
+#This code allows the user to take a quiz on multiplication, it counts their
+#time, and score, which asking them for their difficulty prefrence
 print("Welcome to the Multipliczation Quiz")
-score=0
-difficulty=input("What level of difficulty?: Easy, Medium, or Hard")
-q=int(input("How many questions do you want?"))
+score=0 # We start the score at zero and count upwards
+difficulty=input("What level of difficulty?: Easy, Medium, or Hard")#This asks for input on how large the numbers will be
+q=int(input("How many questions do you want?"))#This changes the number of questions to the users prefrence
 def multiplication_game():
     global score
     global diffculty
@@ -16,24 +18,24 @@ def multiplication_game():
         lvl=(1,12)
     if difficulty== "Hard":
         lvl=(1,15)
-    first_number = random.randint(lvl[0], lvl[1])
+    first_number = random.randint(lvl[0], lvl[1])#This generates a random number between the threshholds they chose
     second_number= random.randint(lvl[0],lvl[1])
 
-    print("What is " + str(first_number) +(" times ")+str(second_number))
+    print("What is " + str(first_number) +(" times ")+str(second_number)) #This feeds a question to the user
     answer_1=int(input("What is the answer?"))
 
-    if answer_1== (first_number * second_number):
+    if answer_1== (first_number * second_number):#This checks the answer from the user and gives a response
         print("Correct")
         score=score+1
     else:
         print("Incorrect, the answer was " + str(first_number * second_number))
 
 def quiz():
-    start=time.time()
+    start=time.time() #This starts a time when the first question is sent
     for i in range (q):
         multiplication_game()
-    end=time.time()
-    print(str(score)+ "/" + str(q))
+    end=time.time()#This  ends the timer
+    print(str(score)+ "/" + str(q)) #These two print statements show the user their score and time
     print(str(end-start)+ " is your time")
 
 quiz()

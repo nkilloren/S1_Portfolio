@@ -1,7 +1,7 @@
 #Pokemon Game
 #11/21/24
 
-
+#These are just three images that will be printed throughout the game
 def draw_squirtle():
     print("""
 ⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⣀⣀⣠⠤⠤⠤⠤⣄⣀⡀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀
@@ -100,7 +100,7 @@ def draw_blastoise():
 ⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠹⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⢿⣿⣿⣧⠀⠀⠀⠀
 ⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠻⠟⠛⠉⠉⠛⠿⣿⡿⠟⠁⠀⠀⠈⠉⠀⠀⠀⠀""")
 import random
-pokemon_level= 1
+pokemon_level= 1 #This is just setting up variables and introducing the user
 battle_wins=0
 pokemon_name ="Squirtle"
 day=1
@@ -113,7 +113,7 @@ while True:
     global pokemon_name
     global day
 
-    print(" It is day "+ str(day) + "! Choose your action")
+    print(" It is day "+ str(day) + "! Choose your action")#Eveery day the user has a few options, to make their pokemon stronger.
     print("""
     1.Train (Increase your level)
     2.Battle (Fight another pokemon, high risk, high reward)
@@ -121,11 +121,11 @@ while True:
     4.Fight the final boss (Not recommended until lvl 50)
     5.Quit""")
     action = input("What do you want to do today? (1-5)")
-    if action=="1":
+    if action=="1":#This is what happens if you pick train
         print("You picked train, and it is successful")
         pokemon_level= pokemon_level+ 2
         print("Your level is now " + str(pokemon_level))
-    if action== "2":
+    if action== "2":#This is what happens when you pick 2
         opponent= random.randint(1,50)
         if opponent > pokemon_level:
             print("Sorry, the random oppenent was level " + str(opponent) + " so you lost")
@@ -134,9 +134,9 @@ while True:
             print("Congrats, you won your battle. Your pokemon gained a lot of level points.")
             pokemon_level = pokemon_level+ opponent/2
             battle_wins= battle_wins +1
-    if action =="3":
+    if action =="3": #This is wat happens when you pick 3
         print("Okay, get some sleep and be ready for tommorrow")
-    if action== "4":
+    if action== "4": #This is when you pick 4
         if pokemon_level < 50:
             print("Sorry, you lost. Train a lot and evolve, then come back")
         if pokemon_level >= 50:
@@ -148,10 +148,10 @@ while True:
                 print("Okay, play again soon!")
                 break
 
-    if action == "5":
+    if action == "5":#Picking 5 quits the game
         break
 
-    print("The day has now ended, these are your stats")
+    print("The day has now ended, these are your stats")#This is all a daily update after you pick an action, showing your level, the day, and your pokemon
     print("Level: "+ str(pokemon_level))
     print("Battle Wins: "+ str(battle_wins))
     day=day+1
