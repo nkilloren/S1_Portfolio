@@ -1,0 +1,126 @@
+#Noah Killoren
+import time
+import random
+
+money=100
+def spin():
+    while True:
+        global money
+        x="cat"
+        y="dog"
+        z="leg"
+        earnings=0
+        profit=0
+        symbols=["7","♢","♣" ,"♥","♠","☆"]
+        print("You have " +str(money) +" dollars")
+        play= input("Would you like the spin?. Input 1 to play, 2 to stop")
+        if play =="2":
+            break
+        if play=="1":
+            bet=int(input("How much would you like to bet?"))
+            if bet>money:
+                print("You do not have that much money. Bet lower")
+                break
+            else:
+                symbols.clear()
+                print("spinning...")
+                time.sleep(2)
+                print("spinning...")
+                time.sleep(2)
+                print("spinning...")
+                time.sleep(2)
+                money=money-bet
+                a=random.randint(1,17)
+                b=random.randint(1,17)
+                c=random.randint(1,17)
+                if a==1 or a==2 or a==3:
+                    x="d"
+                    symbols.append("♢")
+                if a==5 or a==4 or a==6:
+                    x="l"
+                    symbols.append("♣")
+                if a==7 or a==8:
+                    x="v"
+                    symbols.append("7")
+                if a==9 or a==10 or a==11:
+                    x="h"
+                    symbols.append("♥")
+                if a==12 or a==13 or a==14:
+                    x="sp"
+                    symbols.append("♠")
+                if a==15 or a==16 or a==17:
+                    x="st"
+                    symbols.append("☆")
+                if b==1 or b==2 or b==3:
+                    y="d"
+                    symbols.append("♢")
+                if b==5 or b==4 or b==6:
+                    y="l"
+                    symbols.append("♣")
+                if b==7 or b==8:
+                    y="v"
+                    symbols.append("7")
+                if b==9 or b==10 or b==11:
+                    y="h"
+                    symbols.append("♥")
+                if b==12 or b==13 or b==14:
+                    y="sp"
+                    symbols.append("♠")
+                if b==15 or b==16 or b==17:
+                    y="st"
+                    symbols.append("☆")
+                if c==1 or c==2 or c==3:
+                    z="d"
+                    symbols.append("♢")
+                if c==5 or c==4 or c==6:
+                    z="l"
+                    symbols.append("♣")
+                if c==7 or c==8:
+                    z="v"
+                    symbols.append("7")
+                if c==9 or c==10 or c==11:
+                    z="h"
+                    symbols.append("♥")
+                if c==12 or c==13 or c==14:
+                    z="sp"
+                    symbols.append("♠")
+                if c==15 or c==16 or c==17:
+                    z="st"
+                    symbols.append("☆")
+                print(symbols)
+                if a==5 and a==b and a==c:
+                    print("JACKPOT!!!!")
+                    print("You have been awarded 20 times your bet")
+                    earnings=bet * 20
+                    print("+" + str(earnings))
+                    money=money+earnings
+                elif x==y and x==z:
+                    print("Congrats, 3 of a Kind means you won 5 times your bet!")
+                    earnings =bet * 5
+                    print("+" + str(earnings))
+                    money= money+earnings
+                elif x==y or x==z or y==z:
+                    print("Two of a Kind! You earned double your bet!")
+                    earnings= bet * 2
+                    money=money +earnings
+                else:
+                    print("Sorry, you did not win, but there is always next spin!")
+                print("You now have " + str(money) + " dollars!")
+                if money==0:
+                    print("Would you like to insert 100 more dollars into the machine?")
+                    add= input("Press 1 to add 100 more dollars to the machine. If not, you must quit")
+                    if add=="1":
+                        money=money+100
+                    else:
+                        break
+                print("Would you like to play again or cash out now?")
+                time.sleep(1)
+                profit=money-100
+                repeat=input("Press 1 to play again.")
+                if repeat != "1":
+                    if money>100:
+                        print("Wow, you earned " + str(profit) + " dollars!")
+                    print("We hope you come back soon")
+                    break
+spin()
+

@@ -1,0 +1,44 @@
+#Noah Killoren, Vacation Picker
+import random
+from PIL import Image
+import requests
+from io import BytesIO
+vacays=["https://tinyurl.com/2tkwyjsy", #Hawaii
+"https://delivery.gfobcontent.com/api/public/content/69158ae40b48417eb30d19fcc97942a8?v=160b28fd",#Italy
+"https://tinyurl.com/3drv8tzw",#Egypt
+"https://tinyurl.com/bdf7hnf2",#Yellowstone
+"https://tinyurl.com/5yx8xdxd"#Bahamas
+]
+
+def open_image(url):
+    response = requests.get(url)
+    img = Image.open(BytesIO(response.content))
+    img.show()
+def vacation_picker():
+    print("Welcome to the vacation chooser! We are pleased to assist you")
+    choose=input("Click 1 is you want a vacation suggestion, or anything else to quit.")
+    if choose=="1":
+        pick=random.randint(1,5)
+        open_image(vacays[pick-1])
+        if pick ==1:
+            print("Hawaii is a great family vacation or just a couples trip where you can enjoy the warm weather, explore volcanos, and learn about Hawaii's rich culture")
+        if pick ==2:
+            print("Italy is a great trip to explore the rich culture and history, aswell as enjoy great food and go on romantic adventures.")
+        if pick==3:
+            print("Egypt has such a deep history full of mysterys, which you can explore by visiting pyramids, the sphinx and many tombs around egypt.")
+        if pick==4:
+            print("Yellowstone is full of distinct wildlife, whichyou cannot see anywhere else in the world. You will encounter elk, bison , and even bears on your trip.")
+        if pick==5:
+            print("Sit back and relax as you enjoy warm weather and the beautiful ocean air in the Bahamas. You can go surfing, snorkle, or swin with dolphins." )
+while True:
+    vacation_picker()
+    print("Would you like to play again?")
+    play_again=input("Press 1 to play again")
+    if play_again !="1":
+        break
+#Citing images
+#Hawaii image, from Real Hawaiian Tuors,"https://tinyurl.com/ycx86eup", CC unknown
+#Italy image, from Cosmos Tuors, "https://www.cosmos.com/tour/italys-best/6390/?season=2025", CC unknown
+#Egypt image, from National Goegraphic Kids, 2025, "https://kids.nationalgeographic.com/history/article/ancient-egypt", Photograph by Sculpies, Shutterstock, CC unknown
+#Yellowstone image,  Destination Yellowstone, "https://destinationyellowstone.com/discover-the-best-things-to-do-in-yellowstone-national-park/" CC Unknown
+#Bahamas image, from Britannica,"https://www.britannica.com/place/The-Bahamas", CC BY-NC
