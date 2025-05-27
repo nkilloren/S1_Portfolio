@@ -15,5 +15,12 @@ The pokemon game is my favorite, becuase you ave to choose what you want to do e
 Training at the start is best, because you neeed to get strong enough to battle but once you can battle, you improve much faster
 At the end it shows you the current day, your level, and your pokemon. 
 
+I enjoyed making the slot machine, mostly because I could play it over and over again. I like how the user can make decisions on how much they bet, but it's also not harmful to the user.
+
+I wanted to save the vacation code because I got to input pictures and I learned how to address copyright. I think it will be use full to have.
+
+I saved the apocalypse because I wanted to expand on it later. I got a pretty base layer to the game down, but I want to make it more advanced, mabe with stuff I learn next year.
+
 My last project is the calculator. The calculator is a pretty simple artimetic problem solver.
 You can do addition, subtrraction, multiplication, and division with ANY two numbers the user feeds into the calculator. 
+
