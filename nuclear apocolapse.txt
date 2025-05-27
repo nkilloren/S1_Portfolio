@@ -1,0 +1,141 @@
+#Noah Killoren
+import random
+import time
+day=1
+def day_end():
+    global day
+    global hunger
+    global thirst
+    global health
+    global state
+    day = day + 1
+    hunger = hunger - 10
+    thirst = thirst - 20
+    if state == "Poisoned":
+        health = health - 34
+    if state == "sick":
+        health = health - 10
+def day_start():
+    global first_item
+    global second_item
+    global third_item
+    global find_1
+    global find_2
+    global find_3
+    print("These are your stats")
+    print("Hunger:" + str(hunger))
+    print("Thirst:" + str(thirst))
+    print("Health:" + str(health))
+    print("You have a " + first_item + "," + second_item + ", " + third_item + ", " + find_1 + ", " + find_2 + ", " + find_3)
+def adventure_chance():
+    global state
+    adventure = random.randint(1,5)
+    if adventure == 1:
+        print("You hear a stranger screaming that it is safe outdoors and to come out")
+        print("If you come out, you could risk dying to poisoning, but if you go you could find materials")
+        print("Note: You can only have 6 objects at once, if you have more than 6, you must use or discard an item")
+        go = input("Would you like to go outside: 1:Yes or 2:No ")
+        if go == "1":
+            poisoning = random.randint(1,10)
+            if poisoning >= 4:
+                state = "poisoned"
+                print("Oh no! Your skin has turned green and it appears you have poisoning.")
+                print("Your only chance of survival is to hope it goes away, medicine cannot help.")
+            if poisoning >= 7 and find_1 == " ":
+                find = random.randint(1,6)
+                if find == 1:
+                    find_1 = "water"
+                elif find == 2:
+                    find_1 = "bread"
+                elif find == 3:
+                    find_1 = "deck of cards"
+                elif find == 4:
+                    find_1 = "gas mask"
+                elif find == 5:
+                    find_1 = "guitar"
+                elif find == 6:
+                    find_1 = "medicine"
+            elif poisoning >= 7 and find_2 == " ":
+                find = random.randint(1,6)
+                if find == 1:
+                    find_2 = "water"
+                elif find == 2:
+                    find_2 = "bread"
+                elif find == 3:
+                    find_2 = "deck of cards"
+                elif find == 4:
+                    find_2 = "gas mask"
+                elif find == 5:
+                    find_2 = "guitar"
+                elif find == 6:
+                    find_2 = "medicine"
+            elif poisoning >= 7 and find_3 == " ":
+                find = random.randint(1,6)
+                if find == 1:
+                    find_3 = "water"
+                elif find == 2:
+                    find_3 = "bread"
+                elif find == 3:
+                    find_3 = "deck of cards"
+                elif find == 4:
+                    find_3 = "gas mask"
+                elif find == 5:
+                    find_3 = "guitar"
+                elif find == 6:
+                    find_3 = "medicine"
+
+
+def game():
+    global day
+    global hunger
+    global thirst
+    global health
+    global state
+    global first_item
+    global second_item
+    global third_item
+    global find_1
+    global find_2
+    global find_3
+    day = 1
+    state = "Healthy"
+    hunger = 100
+    health = 100
+    thirst = 100
+    find_1 = " "
+    find_2 = " "
+    find_3 = " "
+    #1*=="water"
+    #2*=="beans"
+    #3*=="bread"
+    #4*=="cards"
+    #5*=="guitar"
+    #6*=="radio"
+    #7*=="map"
+    #8*=="gun"
+    #9*=="bat"
+    #10*=="medicine"
+    #11*=="map"
+    #12*=="gas_mask"
+    print("Welcome to Nuclear Apocalypse, the game where you take risks to survive")
+    print("Your brother Bob, sister Jill, mother, father, and yourself Jim are watching a movie one day, when it is interrupt by a national broadcast.")
+    print("The reporter says 'Everybody seek shelter immedietly, a nuclear bomb will strike in 1 minute'")
+    print("QUICK, you have one minute to grab as many things are you can, GO!" )
+    start = time.time()
+    first_item = input("Do you want medicine, water, or a bat?")
+    second_item = input("Do you want beans, a radio, or a deck of cards")
+    third_item = input("Do you want a guitar, water or bread")
+    end = time.time()
+    if end - start > 60:
+        print("You took too long and died to the nuclear bomb")
+
+    print("In your inventory you now have a " + first_item + "," + second_item + ", and a " + third_item)
+
+    print("Go to sleep and get ready for tomorrow")
+    day_end()
+    day_start()
+    print("Every morning your hunger decreases 10 and the thirst decreases by 20")
+    print("If either reach zero, the damage it would do to your hunger or thirst, now affects your health")
+    print("The game is over if you have no health")
+    adventure_chance()
+game()
